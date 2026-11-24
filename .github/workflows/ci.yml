@@ -22,7 +22,7 @@ jobs:
       # поднимает PostgreSQL сам, отдельный service-контейнер не нужен.
 
       - name: Собрать и прогнать проверки (checkstyle, pmd, tests, jacoco)
-        run: mvn -B verify
+        run: mvn -B -Dapi.version=1.40 verify
         continue-on-error: true
 
       - name: Mutation testing (PIT)
